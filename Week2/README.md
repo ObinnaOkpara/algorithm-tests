@@ -13,14 +13,14 @@ Output: [3]
 Explanation: The only substring containing both the words is "catfox"
 
 ### Example 3:
-Input: String = "BikeCarCarCarBike", Words = ["Bike","Car"]
+Input: String = "BikeCardCardCardBike", Words = ["Bike","Card"]
 
 Then words can combine like this:
-- BikeCar 
-- CarBike
+- BikeCard 
+- CardBike
 Then we search the string and check if it contains the above strings
-BikeCar" is found in the beginning of the string, then we take the index which is *0
+BikeCard" is found in the beginning of the string, then we take the index which is *0
 
-Then we search for CarBike, which is found at index 10
+Then we search for CardBike, which is found at index 10
 
-Then we return [0,10]
+Then we return [0,12]
