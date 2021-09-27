@@ -21,6 +21,6 @@ Then words can combine like this:
 Then we search the string and check if it contains the above strings
 BikeCard" is found in the beginning of the string, then we take the index which is *0
 
-Then we search for CardBike, which is found at index 10
+Then we search for CardBike, which is found at index 12
 
 Then we return [0,12]
