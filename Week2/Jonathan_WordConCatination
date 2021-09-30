@@ -1,0 +1,52 @@
+
+function wordConcat(string, word){
+ let wordLength = word[0].length * word.length
+// console.log(wordLength) 
+ 
+ 
+let returnList = [];
+let result = []
+let sortedList = []
+let fnalAnswer;
+let subString = "";
+let wordConCat = "";
+let sortElement;
+
+
+for(let i = 0; i < word.length; i++){
+  wordConCat += word[i]
+}
+
+wordConCat = wordConCat.split('').sort().join('')
+
+for(let i =0; i< string.length; i++)
+{
+  
+  subString += string[i]
+  if(i >= wordLength-1){
+    
+  
+     
+    returnList.push(subString)
+    
+    
+    subString = subString.substr(1)
+}
+
+}
+
+for(let j = 0; j<returnList.length; j++){
+  sortElement = returnList[j]
+  sortElement = sortElement.split('').sort().join('')
+  sortedList.push(sortElement)
+  if(sortElement === wordConCat){
+    result.push(sortedList.indexOf(sortElement))
+    
+    }
+   
+}
+ 
+ return result
+
+}
+console.log(wordConcat("catfoxcat", ["cat","fox"]))
