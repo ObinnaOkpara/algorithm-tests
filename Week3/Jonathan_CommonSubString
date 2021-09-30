@@ -1,0 +1,24 @@
+function subString(string1,string2){
+  let obj = {}
+
+  for(let i of string1){
+  obj[i] = i
+}
+
+for(let j of string2){
+  if(obj[j]){
+   return "Yes"
+   //console.log("Yes")
+  }
+  else{
+    return "No"
+    //console.log("No")
+  }
+  
+}
+  console.log(obj)
+  
+
+  
+}
+subString("hello","eba")
