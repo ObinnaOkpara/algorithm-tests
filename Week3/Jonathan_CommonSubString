@@ -1,24 +1,32 @@
 function subString(string1,string2){
   let obj = {}
-
-  for(let i of string1){
+  let i;
+  let j;
+  let result = true;
+  
+  for(i of string1)
   obj[i] = i
-}
 
-for(let j of string2){
+
+for(j of string2){
+//console.log()
+}
   if(obj[j]){
-   return "Yes"
-   //console.log("Yes")
-  }
-  else{
-    return "No"
-    //console.log("No")
-  }
+   return result
+   }
+   
   
-}
-  console.log(obj)
+  else{
+    result = false
+    return result
+    }
+    //console.log("No")
+  
+  
+
+  return result
   
 
   
 }
-subString("hello","eba")
+console.log(subString("hello","bano"))
