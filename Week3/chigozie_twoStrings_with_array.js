@@ -1,4 +1,4 @@
-function twoStrings(str1 = "and", str2 = "art") {
+function twoStrings(str1 = "", str2 = "") {
   const arr = new Array(26).fill(false);
   for (let i = 0; i < str1.length; i++) {
     arr[str1[i].charCodeAt() - "a".charCodeAt()] = true;
