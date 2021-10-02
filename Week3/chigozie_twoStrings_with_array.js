@@ -4,9 +4,7 @@ function twoStrings(str1 = "", str2 = "") {
     arr[str1[i].charCodeAt() - "a".charCodeAt()] = true;
   }
   for (let j = 0; j < str2.length; j++) {
-    if (arr[str2[j].charCodeAt() - "a".charCodeAt()]) {
-      return "YES";
-    }
+    if (arr[str2[j].charCodeAt() - "a".charCodeAt()]) return "YES";
   }
   return "NO";
 }
