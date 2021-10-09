@@ -1,3 +1,4 @@
+### Question
 Given a string, find the length of the longest substring
  in it with no more than K distinct/unique characters.
 
@@ -8,7 +9,7 @@ Output: 6
 Input: String="araaci", K=1
 Output: 2
 
-**An explanation on how to solve it
+## An explanation on how to solve it
 
 
  1. First, we will insert characters 
