@@ -2,7 +2,7 @@
 
 public class Class1
 {
-    public static List<int> WordConcatSubStringIndicies(string str, string[] words)
+    public static List<int> WordConcatination(string str, string[] words)
     {
         int wordCount = words.Length;
         int wordLength = words[0].Length;
@@ -24,37 +24,49 @@ public class Class1
         return returnList;
     }
 
-    public static bool CheckForMatch(string subString, string[] words)
+    public static bool CheckForMatch(string str, string[] words)
     {
-        bool isFound = false;
-        string word = string.Empty;
-        //This loops and concantenates each words in words and compare it with the substring
-        //If it matches, we return true
+        int wordLength = words[0].Length;
+        var newDic1 = new Dictionary<string, int>();
+        var newDic2 = new Dictionary<string, int>();
 
-        //This loop picks a word from words array
-        for (int i = 0; i < words.Length; i++)
+
+        for (int i = 0; i < str.Length; i += wordLength)
         {
-            word = words[i];
-            //This loop joins every word in words with the word picked in the above loop.
-            for (int j = 0; j < words.Length; j++)
+            string word = str.Substring(i, wordLength);
+            if (newDic1.ContainsKey(word))
             {
-                //we skip a step here, since we dont want to join a word to itself.
-                if (i == j)
-                {
-                    continue;
-                }
-                word += words[j];
+                newDic1[word] += 1;
+                continue;
             }
-            //Then, we compare the concatenated word with the subtring, 
-            //If it matches, break out of the loop
-            if (word == subString)
-            {
-                isFound = true;
-                break;
-            }
+            newDic1.Add(word, 1);
         }
 
-        return isFound;
+        foreach (var word in words)
+        {
+            if (newDic2.ContainsKey(word))
+            {
+                newDic2[word] += 1;
+                continue;
+            }
+            newDic2.Add(word, 1);
+        }
+
+        foreach (var keyValue in newDic2)
+        {
+            if (newDic1.ContainsKey(keyValue.Key))
+            {
+                if (!(keyValue.Value == newDic1[keyValue.Key]))
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
